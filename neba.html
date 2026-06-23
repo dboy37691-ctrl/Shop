@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueShop | Designed to Disrupt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            900: '#020617',
+                            800: '#0f172a',
+                            700: '#1e293b',
+                            100: '#f1f5f9',
+                        }
+                 u   },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #020617; color: #f1f5f9; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        .hero-gradient { background: radial-gradient(circle at center, #0f172a 0%, #020617 100%); }
+        .glass-nav { background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.03); }
+        .img-hover-zoom { overflow: hidden; }
+        .img-hover-zoom img { transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .img-hover-zoom:hover img { transform: scale(1.08); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="antialiased font-sans overflow-x-hidden">
+
+    <nav class="fixed w-full top-0 mt-8 z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="hidden md:flex space-x-8 text-xs font-bold tracking-widest uppercase">
+                <a href="#" class="hover:text-blue-400 transition-colors">Shop</a>
+                <a href="#" class="hover:text-blue-400 transition-colors">Journal</a>
+            </div>
+            <a href="#" class="text-3xl font-display font-bold tracking-tighter uppercase text-white">Blue<span class="text-blue-600">Shop</span></a>
+            <div class="flex items-center space-x-6">
+                <button class="text-gray-400 hover:text-white transition-colors"><i class="ph ph-shopping-bag text-2xl"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative w-full min-h-screen flex items-center justify-center pt-24 hero-gradient overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-blue-900/20 rounded-full blur-[120px]"></div>
+        </div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="font-display text-8xl md:text-[12rem] font-bold uppercase leading-none tracking-tighter mb-8">
+                <span class="block reveal active">Phantom</span>
+            </h1>
+            <a href="#catalog" class="reveal active inline-block border border-white/20 text-white font-bold uppercase tracking-[0.2em] text-xs px-12 py-5 hover:bg-white hover:text-black transition-all duration-500">
+                Explore The Drop
+            </a>
+        </div>
+    </header>
+
+    <section id="catalog" class="py-24 px-6 md:px-12 max-w-[1600px] mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Product Cards with verified image filenames -->
+            <div class="group cursor-pointer">
+                <div class="bg-brand-800 rounded-sm overflow-hidden img-hover-zoom aspect-[3/4] mb-4">
+                    <img src="bfd2f37085718743d9c5020e9a8766cf.jpg" alt="Phantom Hoodie" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-sm font-bold uppercase tracking-widest">Phantom Hoodie</h3>
+                <p class="text-xs text-gray-500 mt-1">$145.00</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="bg-brand-800 rounded-sm overflow-hidden img-hover-zoom aspect-[3/4] mb-4">
+                    <img src="44a71d8ee52f155013a69fd69d27c0b2.jpg" alt="Tee" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-sm font-bold uppercase tracking-widest">Standard Tee</h3>
+                <p class="text-xs text-gray-500 mt-1">$45.00</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="bg-brand-800 rounded-sm overflow-hidden img-hover-zoom aspect-[3/4] mb-4">
+                    <img src="9120a35ce4bd0bf325aacca624729640.jpg" alt="Shoes" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-sm font-bold uppercase tracking-widest">Urban Runner</h3>
+                <p class="text-xs text-gray-500 mt-1">$185.00</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="bg-brand-800 rounded-sm overflow-hidden img-hover-zoom aspect-[3/4] mb-4">
+                   <img src="54d5a5dd35b39425ce680533f3d1583d.jpg" alt="Pants" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-sm font-bold uppercase tracking-widest">Tactical Pant</h3>
+                <p class="text-xs text-gray-500 mt-1">$120.00</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Reveal elements on scroll
+        window.addEventListener("scroll", () => {
+            document.querySelectorAll(".reveal").forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add("active");
+            });
+        });
+    </script>
+</body>
+</html>
